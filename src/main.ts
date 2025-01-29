@@ -34,20 +34,22 @@ const handleWelcomeMessage = async () => {
   dailyMessage.innerText = `${greeting} ${cleanMessageData.content}`
   welcomeMessageContainer.appendChild(dailyMessage)
 }
-
+const priorityColourFinder = ():string => {
+  const urgancy = priority.value
+  let urgancyColor = 'white'
+  if(urgancy === 'urgent'){
+    return urgancyColor = 'red'
+  } else if(urgancy === 'moderate'){
+    return urgancyColor = 'yellow'
+  } else {
+    return urgancyColor = 'white'
+  }
+}
 const handleAddTodo = (event: Event) => {
   const inputValue = handleInput()  
   if (!inputValue) return;
   console.log(priority.value)
-  const urgancy = priority.value
-  let urgancyColor = 'white'
-  if(urgancy === 'urgent'){
-    urgancyColor = 'red'
-  } else if(urgancy === 'moderate'){
-    urgancyColor = 'yellow'
-  } else {
-    urgancyColor === 'white'
-  }
+  
   const todoItem = document.createElement("div");
   todoItem.classList.add("todo-item");
   todoListContainer.appendChild(todoItem)
@@ -55,7 +57,7 @@ const handleAddTodo = (event: Event) => {
   const newTodo = document.createElement('p');
   newTodo.classList.add('newTodo');
     newTodo.innerText = ` ${inputValue}`
-    newTodo.style.color = `${urgancyColor}`
+    newTodo.style.color = `${priorityColourFinder()}`
   todoItem.appendChild(newTodo);
 
   const deleteTodo = document.createElement('button');
