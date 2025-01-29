@@ -37,9 +37,37 @@ h1{
         transform: scale(1.5)
     }
 }
+
+.welcome-message-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .todo-list-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.todo-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newTodo{
+    margin: 20px;
+    width: 300px;
+}
+
+.deleteTodo{
+    border-radius: 10%;
+    background-color: $camel;
+    color: $babyblue;
+    border: 3px solid black;
+    max-height: 25px;
+}
+.deleteTodo:hover{
+    cursor: pointer;
+    transform: scale(1.5)
 }

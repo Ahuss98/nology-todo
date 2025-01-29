@@ -49,7 +49,7 @@ const handleAddTodo = (event: Event) => {
 
   const deleteTodo = document.createElement('button');
   deleteTodo.classList.add('deleteTodo');
-  deleteTodo.innerText = 'Delete'
+  deleteTodo.innerText = '2Done'
   todoItem.appendChild(deleteTodo);
 
   inputBox.value = ""
