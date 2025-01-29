@@ -1,0 +1,45 @@
+$camel: rgb(193,154,107);
+$babyblue: rgb(137,207,240);
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: $babyblue;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: $camel;
+    font-family:fantasy;
+    font-weight: bolder;
+}
+
+.add-todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__todo-text{
+        margin: 20px;
+        width: 300px;
+        border: 3px solid black;
+    }
+    &__todo-text-add{
+        border-radius: 10%;
+        background-color: $camel;
+        color: $babyblue;
+        border: 3px solid black;
+    }
+    &__todo-text-add:hover {
+        cursor: pointer;
+        transform: scale(1.5)
+    }
+}
+.todo-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

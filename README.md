@@ -43,7 +43,7 @@ A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**,
 
 ## 🎨 SCSS Styling (BEM)
 - [ ] **Rounded edges** for buttons  
-- [ ] **Color scheme:** Baby blue & camel brown
+- [ ] **Color scheme:** Baby blue RGB(137, 207, 240) & camel brown RGB(193, 154, 107)
 - [ ] **Camel** is the theme animal   
 - [ ] **Hover effects:**  
   - [ ] Buttons **enlarge** and **change text color**  
