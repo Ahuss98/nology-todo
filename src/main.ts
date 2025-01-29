@@ -13,6 +13,27 @@ const handleInput = ():string => {
   const inputValue = inputBox.value.trim()
   return inputValue
 }
+
+const handleWelcomeMessage = async () => {
+  const messageData = await fetch(`https://api.quotable.io/random?size=1`)
+  const cleanMessageData = await messageData.json()
+  const dailyMessage = document.createElement('p')
+  dailyMessage.classList.add('dailyMessage')
+  const date = new Date()
+  const currentHour = date.getHours()
+  let greeting = ''
+  if(currentHour < 12 && currentHour > 0){
+    greeting = `Good Morning!`
+  } else if (currentHour < 17){
+    greeting = `Good Afternoon!`
+  } else if(currentHour < 21){
+    greeting = `Good Evening!`
+  }
+  console.log(cleanMessageData)
+  dailyMessage.innerText = `${greeting} ${cleanMessageData.content}`
+  welcomeMessageContainer.appendChild(dailyMessage)
+}
+
 const handleAddTodo = (event: Event) => {
   const inputValue = handleInput()  
   if (!inputValue) return;
@@ -39,3 +60,4 @@ const handleAddTodo = (event: Event) => {
 
 
 addButton.addEventListener('click',handleAddTodo)
+document.addEventListener('DOMContentLoaded',handleWelcomeMessage)

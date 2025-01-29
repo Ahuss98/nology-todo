@@ -70,11 +70,11 @@ A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**,
 - [ ] Updates the greeting (`Good Morning!`, `Good Afternoon!`, `Good Evening!`).  
 
 ### 🌍 `fetchRandomMessage()`
-- [ ] Fetches a **random quote or message** from an API (`https://api.quotable.io/random`).  
+- [ ] Fetches a **random quote or message** from an API (`https://api.quotable.io/random?size=1`).  
 - [ ] Updates the UI with the **retrieved data**.  
 
 - ### Listeners
-- [ ] click **listener** for the **add** button 
-- [ ] click **listener** for **delete** button 
+- [x] click **listener** for the **add** button 
+- [x] click **listener** for **delete** button 
 - [ ] **DOMContentLoaded** to load inital greeting and **fetches** initial data
 - [ ] **keydown** to allow users to **add** todos with **enter**
