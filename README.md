@@ -1,4 +1,5 @@
 # ✅ My Todo List
+## 2Do2Done
 
 A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**, featuring:
 - **Dynamic greetings** based on the time of day 🌞🌙  
@@ -34,20 +35,20 @@ A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**,
 ## 🏗️ Project Structure
 
 ### **📄 HTML Elements**
-- [ ] `<h1>` for the **title**  2DO2DONE
-- [ ] `<p>` for the **random quote/message**  
-- [ ] `<div>` for the **input text box** and **Add Todo button**  
-- [ ] `<div>` for the **list of todos** and their **Delete buttons**  
+- [x] `<h1>` for the **title**  2DO2DONE
+- [x] `<p>` for the **random quote/message**  
+- [x] `<div>` for the **input text box** and **Add Todo button**  
+- [x] `<div>` for the **list of todos** and their **Delete buttons**  
 
 ---
 
 ## 🎨 SCSS Styling (BEM)
-- [ ] **Rounded edges** for buttons  
-- [ ] **Color scheme:** Baby blue RGB(137, 207, 240) & camel brown RGB(193, 154, 107)
+- [x] **Rounded edges** for buttons  
+- [x] **Color scheme:** Baby blue RGB(137, 207, 240) & camel brown RGB(193, 154, 107)
 - [ ] **Camel** is the theme animal   
-- [ ] **Hover effects:**  
-  - [ ] Buttons **enlarge** and **change text color**  
-  - [ ] Cursor **pointer effect** on buttons  
+- [x] **Hover effects:**  
+  - [x] Buttons **enlarge** and **change text color**  
+  - [x] Cursor **pointer effect** on buttons  
 
 ---
 
@@ -70,11 +71,11 @@ A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**,
 - [ ] Updates the greeting (`Good Morning!`, `Good Afternoon!`, `Good Evening!`).  
 
 ### 🌍 `fetchRandomMessage()`
-- [ ] Fetches a **random quote or message** from an API (`https://api.quotable.io/random?size=1`).  
-- [ ] Updates the UI with the **retrieved data**.  
+- [x] Fetches a **random quote or message** from an API (`https://api.quotable.io/random?size=1`).  
+- [x] Updates the UI with the **retrieved data**.  
 
 - ### Listeners
 - [x] click **listener** for the **add** button 
 - [x] click **listener** for **delete** button 
-- [ ] **DOMContentLoaded** to load inital greeting and **fetches** initial data
+- [x] **DOMContentLoaded** to load inital greeting and **fetches** initial data
 - [ ] **keydown** to allow users to **add** todos with **enter**
