@@ -79,3 +79,11 @@ A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**,
 - [x] click **listener** for **delete** button 
 - [x] **DOMContentLoaded** to load inital greeting and **fetches** initial data
 - [ ] **keydown** to allow users to **add** todos with **enter**
+
+---
+
+## 👽 Additional functionality
+- [ ] add priority to each todo item (ie. red,amber,green)
+- [ ] add a date added to each todo
+- [ ] data persistence using read/write to a JSON file
+    - [ ] follow on form, this is to have a completed tab for previous ticked off toDos
