@@ -1,4 +1,5 @@
 import './style.scss'
+import * as fs from "fs";
 
 const inputBox = document.querySelector<HTMLInputElement>('.add-todo-container__todo-text')
 const addButton = document.querySelector<HTMLButtonElement>('.add-todo-container__todo-text-add')
@@ -7,7 +8,7 @@ const todoDoneContainer = document.querySelector<HTMLDivElement>('.todo-done-con
 const welcomeMessageContainer = document.querySelector<HTMLDivElement>('.welcome-message-container')
 const priority = document.querySelector<HTMLSelectElement>('#priority')
 
-if(!inputBox || !addButton || !todoListContainer || !welcomeMessageContainer || !priority){
+if(!inputBox || !addButton || !todoListContainer || !welcomeMessageContainer || !priority || !todoDoneContainer){
   throw new Error ('it didnt work')
 }
 
@@ -38,9 +39,8 @@ const handleWelcomeMessage = async () => {
 
 const findTimeNow = ():string => {
     const date = new Date()
-  // const currentHour = date.getHours()
-  const year = date.getFullYear(); // 2024
-  const month = date.getMonth() + 1; // Months are 0-based, so add +1
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1; 
   const day = date.getDate();
   console.log(`${year}/${month}/${day}`)
   return `${day}/${month}/${year}`
@@ -49,16 +49,33 @@ const findTimeNow = ():string => {
 
 const priorityColourFinder = ():string => {
   const urgancy = priority.value
-  let urgancyColor = 'white'
   if(urgancy === 'urgent'){
-    return urgancyColor = 'red'
+    return 'red'
   } else if(urgancy === 'moderate'){
-    return urgancyColor = 'yellow'
+    return 'yellow'
   } else {
-    return urgancyColor = 'white'
+    return  'white'
   }
 }
-const handleAddTodo = (event: Event) => {
+
+//api refrence http://localhost:8000/todos
+
+const readJson = async () => {
+  const apiData = await fetch('http://localhost:8000/todos')
+  const cleanApiData = await apiData.json()
+  console.log(cleanApiData)
+  return cleanApiData
+}
+const writeJson = async (todoText:string) => {
+  const response = await fetch("http://localhost:8000/todos", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ task: todoText }),
+  });
+  return await response.json();
+}
+
+const handleAddTodo = async () => {
   const inputValue = handleInput()  
   if (!inputValue) return;
   console.log(priority.value)
@@ -84,8 +101,17 @@ const handleAddTodo = (event: Event) => {
   todoItem.appendChild(deleteTodo);
 
   inputBox.value = ""
-  deleteTodo.addEventListener('click', () => {
-    // todoDoneContainer?.appendChild(newTodo)
+  
+  deleteTodo.addEventListener('click', async ()  => {
+    await writeJson(newTodo.innerText);
+    const arrOfObj = await readJson()
+    arrOfObj.forEach(task => {
+      const doneTask = document.createElement('p')
+      doneTask.classList.add('doneTask')
+      todoDoneContainer.appendChild(doneTask)
+      doneTask.innerText = task.task
+      
+    });
     todoItem.remove()
   })
 }
