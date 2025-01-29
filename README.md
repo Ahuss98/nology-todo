@@ -56,13 +56,13 @@ A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**,
 - ### Handlers
 
 ### 📌 `handleAddTodo(event: Event)`
-- [ ] Prevents **default form submission**.  
-- [ ] Captures **user input** and adds it to the list.  
-- [ ] **Clears the input field** after adding the task.  
+- [x] Prevents **default form submission**.  
+- [x] Captures **user input** and adds it to the list.  
+- [x] **Clears the input field** after adding the task.  
 
 ### 🗑️ `handleDeleteTodo(event: Event)`
-- [ ] Detects **which delete button** was clicked.  
-- [ ] Removes the corresponding **todo item**.  
+- [x] Detects **which delete button** was clicked.  
+- [x] Removes the corresponding **todo item**.  
 - [ ] Optionally adds **fade-out animation** before removal.  
 
 ### ⏳ `handleGreeting()`
