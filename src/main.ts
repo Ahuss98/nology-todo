@@ -1,5 +1,4 @@
 import './style.scss'
-import * as fs from "fs";
 
 const inputBox = document.querySelector<HTMLInputElement>('.add-todo-container__todo-text')
 const addButton = document.querySelector<HTMLButtonElement>('.add-todo-container__todo-text-add')
