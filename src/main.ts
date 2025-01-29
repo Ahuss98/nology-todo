@@ -108,10 +108,14 @@ const handleAddTodo = async () => {
     }
     await writeJson(newTodo.innerText);
     const arrOfObj:Todo[] = await readJson()
+    const doneTodoItem = document.createElement("div");
+    doneTodoItem.classList.add("done-todo-item");
+    todoDoneContainer.innerHTML = ''
+    todoDoneContainer.appendChild(doneTodoItem)
     arrOfObj.forEach((task:Todo) => {
       const doneTask = document.createElement('p')
       doneTask.classList.add('doneTask')
-      todoDoneContainer.appendChild(doneTask)
+      doneTodoItem.appendChild(doneTask)
       doneTask.innerText = task.task
       
     });
