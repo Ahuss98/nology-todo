@@ -103,9 +103,12 @@ const handleAddTodo = async () => {
   inputBox.value = ""
   
   deleteTodo.addEventListener('click', async ()  => {
+    type Todo = {
+      task: string;
+    }
     await writeJson(newTodo.innerText);
-    const arrOfObj = await readJson()
-    arrOfObj.forEach(task => {
+    const arrOfObj:Todo[] = await readJson()
+    arrOfObj.forEach((task:Todo) => {
       const doneTask = document.createElement('p')
       doneTask.classList.add('doneTask')
       todoDoneContainer.appendChild(doneTask)
