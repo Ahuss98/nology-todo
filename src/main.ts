@@ -4,8 +4,9 @@ const inputBox = document.querySelector<HTMLInputElement>('.add-todo-container__
 const addButton = document.querySelector<HTMLButtonElement>('.add-todo-container__todo-text-add')
 const todoListContainer = document.querySelector<HTMLDivElement>('.todo-list-container')
 const welcomeMessageContainer = document.querySelector<HTMLDivElement>('.welcome-message-container')
+const priority = document.querySelector<HTMLSelectElement>('#priority')
 
-if(!inputBox || !addButton || !todoListContainer || !welcomeMessageContainer){
+if(!inputBox || !addButton || !todoListContainer || !welcomeMessageContainer || !priority){
   throw new Error ('it didnt work')
 }
 
@@ -37,14 +38,24 @@ const handleWelcomeMessage = async () => {
 const handleAddTodo = (event: Event) => {
   const inputValue = handleInput()  
   if (!inputValue) return;
-
+  console.log(priority.value)
+  const urgancy = priority.value
+  let urgancyColor = 'white'
+  if(urgancy === 'urgent'){
+    urgancyColor = 'red'
+  } else if(urgancy === 'moderate'){
+    urgancyColor = 'yellow'
+  } else {
+    urgancyColor === 'white'
+  }
   const todoItem = document.createElement("div");
   todoItem.classList.add("todo-item");
   todoListContainer.appendChild(todoItem)
-
+  
   const newTodo = document.createElement('p');
   newTodo.classList.add('newTodo');
-  newTodo.innerText = `${inputValue}`
+    newTodo.innerText = ` ${inputValue}`
+    newTodo.style.color = `${urgancyColor}`
   todoItem.appendChild(newTodo);
 
   const deleteTodo = document.createElement('button');

@@ -83,7 +83,7 @@ A simple **Todo List** web app built using **HTML, SCSS (BEM), and TypeScript**,
 ---
 
 ## 👽 Additional functionality
-- [ ] add priority to each todo item (ie. red,amber,green)
+- [x] add priority to each todo item (ie. red,amber,green)
 - [ ] add a date added to each todo
 - [ ] data persistence using read/write to a JSON file
     - [ ] follow on form, this is to have a completed tab for previous ticked off toDos
