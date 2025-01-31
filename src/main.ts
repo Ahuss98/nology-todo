@@ -57,7 +57,7 @@ const priorityColourFinder = ():string => {
   }
 }
 
-//api refrence http://localhost:8000/todos
+//locall api refrence http://localhost:8000/todos
 
 const readJson = async () => {
   const apiData = await fetch('http://localhost:8000/todos')
